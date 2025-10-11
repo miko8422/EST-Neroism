@@ -1,0 +1,18 @@
+{
+    "final_output_dir": "/workspace/Workspace/EST/results/final_ssn",
+    "duckdb_memory_limit": "8GB",
+    "duckdb_threads": 1,
+    "num_fasta_shards": 128,
+    "num_accession_shards": 16,
+    "job_id": 42,
+    "efi_config": "/workspace/Workspace/EST/data/efi/efi.config",
+    "fasta_db": "/workspace/Workspace/EST/data/fasta_cache/test_blastdb",
+    "efi_db": "/workspace/Workspace/EST/data/efi/efi_db.sqlite",
+    "import_mode": "fasta",
+    "filter": null,
+    "multiplex": false,
+    "blast_num_matches": 250,
+    "blast_evalue": "1e-5",
+    "sequence_version": "uniprot",
+    "uploaded_fasta_file": "/workspace/Workspace/EST/data/fasta_cache/test.fasta"
+}

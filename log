@@ -1,0 +1,73 @@
+INFO:__main__:Starting server on port 56100
+ * Serving Flask app 'server'
+ * Debug mode: on
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:56100
+ * Running on http://172.17.0.4:56100
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:Starting server on port 56100
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 921-394-730
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2025 17:38:26] "[33mGET / HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2025 17:38:27] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2025 17:38:28] "[33mGET /info HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2025 17:38:29] "[33mGET /status HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2025 17:38:30] "[33mGET /version HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2025 17:38:30] "[33mGET /api HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2025 17:38:31] "[33mGET /docs HTTP/1.1[0m" 404 -
+INFO:__main__:Cleaning up work directory: /workspace/Workspace/EST/results/final_ssn
+INFO:__main__:Work directory cleaned successfully
+INFO:__main__:Filter min val: 5
+INFO:__main__:Saved FASTA file to: /workspace/Workspace/EST/data/fasta_cache/test.fasta
+INFO:__main__:File size: 299 bytes
+INFO:__main__:Running command: makeblastdb -in /workspace/Workspace/EST/data/fasta_cache/test.fasta -dbtype prot -out /workspace/Workspace/EST/data/fasta_cache/test_blastdb
+INFO:__main__:Working directory: /workspace/Workspace/EST
+INFO:__main__:EFI_DATA_DIR set to: /workspace/Workspace/EST/data/efi
+INFO:__main__:Return code: 0
+INFO:__main__:STDOUT:
+
+
+Building a new DB, current time: 09/03/2025 17:38:32
+New DB name:   /workspace/Workspace/EST/data/fasta_cache/test_blastdb
+New DB title:  /workspace/Workspace/EST/data/fasta_cache/test.fasta
+Sequence type: Protein
+Deleted existing Protein BLAST database named /workspace/Workspace/EST/data/fasta_cache/test_blastdb
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 2 sequences in 0.00184798 seconds.
+
+
+
+INFO:__main__:STDERR:
+
+INFO:__main__:Checking for BLAST DB files at: /workspace/Workspace/EST/data/fasta_cache/test_blastdb*
+INFO:__main__:Found BLAST DB files: ['test_blastdb.pdb', 'test_blastdb.pto', 'test_blastdb.pin', 'test_blastdb.ptf', 'test_blastdb.psq', 'test_blastdb.pot', 'test_blastdb.phr']
+INFO:__main__:Running command: python bin/create_est_nextflow_params.py fasta --fasta-file /workspace/Workspace/EST/data/fasta_cache/test.fasta --fasta-db /workspace/Workspace/EST/data/fasta_cache/test_blastdb --output-dir /workspace/Workspace/EST/results/final_ssn --efi-config ./data/efi/efi.config --efi-db ./data/efi/efi_db.sqlite --nextflow-config conf/est/docker.config
+INFO:__main__:Working directory: /workspace/Workspace/EST
+INFO:__main__:EFI_DATA_DIR set to: /workspace/Workspace/EST/data/efi
+INFO:__main__:Return code: 0
+INFO:__main__:STDOUT:
+Wrote params to '/workspace/Workspace/EST/results/final_ssn/params.yml'
+Wrote Nextflow script to /workspace/Workspace/EST/results/final_ssn/run_nextflow.sh
+
+INFO:__main__:STDERR:
+
+INFO:__main__:Checking output directory: /workspace/Workspace/EST/results/final_ssn
+INFO:__main__:Found file: /workspace/Workspace/EST/results/final_ssn/run_nextflow.sh
+INFO:__main__:Found file: /workspace/Workspace/EST/results/final_ssn/params.yml
+INFO:__main__:Looking for EST nextflow script at: /workspace/Workspace/EST/results/final_ssn/run_nextflow.sh
+INFO:__main__:Found EST nextflow script, running it...
+INFO:__main__:Script content:
+#!/bin/bash
+#
+# This is the default command-line interface template that is used for testing or by a user when
+# running on a system through Docker or a manual installation.  Include here any environment setup
+# that is required (e.g. source, venv) to run.
+
+# Normally nothing should be changed here
+nextflow -C /workspace/Workspace/EST/conf/est/docker.config -log /workspace/Workspace/EST/results/final_ssn/nextflow.log run /workspace/Workspace/EST/pipelines/est/est.nf -params-file /workspace/Works...
+INFO:__main__:Running command: bash /workspace/Workspace/EST/results/final_ssn/run_nextflow.sh
+INFO:__main__:Working directory: /workspace/Workspace/EST
+INFO:__main__:EFI_DATA_DIR set to: /workspace/Workspace/EST/data/efi
