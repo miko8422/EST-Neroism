@@ -79,6 +79,20 @@ make
 mv cd-hit $EFIDEPS/bin/cd-hit
 ```
 
+### 1.5 Pull the EST container image
+
+EST pipelines run inside a container. Pull it before running any tests or pipelines:
+
+```bash
+# Docker
+docker pull enzymefunctioninitiative/efi-est:latest
+
+# Singularity (if using Singularity instead of Docker)
+singularity pull docker://enzymefunctioninitiative/efi-est:latest
+```
+
+> Without this image the test suite and all pipeline runs will fail.
+
 ---
 
 ## Step 2: Python Environment
